@@ -1,0 +1,19 @@
+/* Reminder pop-up */
+.anchor-reminder-modal .anchor-reminder-origin {
+	color: var(--text-muted);
+	font-size: var(--font-ui-smaller);
+	margin: -6px 0 8px;
+}
+.anchor-reminder-modal .anchor-reminder-title { width: 100%; }
+.anchor-reminder-modal .setting-item-control textarea { width: 100%; min-height: 4.5em; }
+.anchor-reminder-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	justify-content: flex-end;
+}
+.anchor-reminder-chip.is-active {
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+}
+.anchor-reminder-custom { max-width: 13em; }
