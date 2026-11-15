@@ -45,7 +45,7 @@ export class ReminderModal extends Modal {
 	onOpen() {
 		const { contentEl } = this;
 		this.modalEl.addClass('anchor-reminder-modal');
-		this.setTitle('⏰ New reminder');
+		this.titleEl.setText('⏰ New reminder');
 		contentEl.createDiv({ cls: 'anchor-reminder-origin', text: `from ${this.ctx.label}` });
 
 		let titleInput!: HTMLInputElement;
@@ -253,8 +253,8 @@ export function renderSettings(app: App, el: HTMLElement, s: ReminderSettings, s
 			'project-selection': 'Project name — selected text',
 		}).setValue(s.titleSource).onChange(async v => { s.titleSource = v as TitleSource; await save(); }));
 	new Setting(el).setName('Quick times').setDesc('Morning / evening hour for the “Tomorrow” and “Today” buttons.')
-		.addText(t => t.setValue(String(s.morningHour)).onChange(async v => { s.morningHour = clampHour(v, 9); await save(); }).inputEl.style.width = '4em')
-		.addText(t => t.setValue(String(s.eveningHour)).onChange(async v => { s.eveningHour = clampHour(v, 17); await save(); }).inputEl.style.width = '4em');
+		.addText(t => t.setValue(String(s.morningHour)).onChange(async v => { s.morningHour = clampHour(v, 9); await save(); }).inputEl.addClass('anchor-reminder-hour'))
+		.addText(t => t.setValue(String(s.eveningHour)).onChange(async v => { s.eveningHour = clampHour(v, 17); await save(); }).inputEl.addClass('anchor-reminder-hour'));
 	new Setting(el).setName('Date only by default')
 		.setDesc('Start the pop-up with “No time” switched on (all-day reminders).')
 		.addToggle(t => t.setValue(s.dateOnly).onChange(async v => { s.dateOnly = v; await save(); }));

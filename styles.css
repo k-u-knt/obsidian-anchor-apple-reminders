@@ -17,3 +17,6 @@
 	color: var(--text-on-accent);
 }
 .anchor-reminder-custom { max-width: 13em; }
+
+/* Settings: the two hour boxes under Quick times */
+.setting-item-control input.anchor-reminder-hour { width: 4em; }
